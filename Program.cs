@@ -11,19 +11,19 @@ class Program
         string shuffledParagraph = RandomlyRearrangeWords(paragraph);
         Console.WriteLine("\nRearranged paragraph:");
         Console.WriteLine(shuffledParagraph);
-        Console.ReadLine(); // Keep the console window open
+        Console.ReadLine();
     }
 
     static string RandomlyRearrangeWords(string paragraph)
     {
-        // Split the paragraph into words
+        // Splits the paragraph into words
         string[] words = paragraph.Split(new[] { ' ', '\t', '\n', '\r' }, StringSplitOptions.RemoveEmptyEntries);
 
-        // Shuffle the words randomly
+        // Shuffles the words randomly
         Random rng = new Random();
         string[] shuffledWords = words.OrderBy(word => rng.Next()).ToArray();
 
-        // Join the shuffled words back into a new paragraph
+        // Joins the shuffled words back into a new paragraph
         string shuffledParagraph = string.Join(" ", shuffledWords);
         return shuffledParagraph;
     }
